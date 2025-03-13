@@ -2,7 +2,7 @@ import express from 'express';
 // import { blogPost } from './postData.js';
 import bodyParser from 'body-parser';
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -61,6 +61,6 @@ app.use((err,req,res, next) => {
 
 /////
 
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
 })
