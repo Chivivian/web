@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('partials/navbar')%>
+    <h1>Post</h1>
+    <form action="/update/<%= id %>" method="POST">
+        <label for="title">Title:</label>
+        <input name="title" value="<%= entry.title %>">
+        <label for="content">Content: </label>
+        <textarea name="content" id="content"><%= entry.content %></textarea>
+        <button type="submit">Update</button>
+
+    </form>
+</body>
+
+</html>

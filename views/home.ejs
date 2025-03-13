@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <section class="hero">
+        <%- include('partials/navbar')%>
+        <div id="write-story">
+            <h1>✨Got a story to tell? Start your blog post now✍️✍️✍️</h1>
+            <button><a href="./form" class="button">click Here</a>
+            </button>
+        </div>
+
+    </section>
+
+
+    <section>
+        <h2 class="my-post">My Posts</h2>
+        <ul class="blog">
+            <%- include('partials/blog-post')%>
+            <% submit.forEach((entry, index) => {
+            %>
+                <div>
+                    <li>
+                        <h3><%= entry.title %></h3>
+                        <p><%= entry.content %></p>
+                        <div id="buttons">
+                            <button><a href="/edit/<%= index %>">Edit</a></button>
+                            <form action="/delete/<%= index %>" method="POST">
+                                <button type="submit"  onclick="return confirm('Are you sure?')">Delete</button>
+                            </form>
+                        </div>
+
+                    </li>
+                </div>
+
+            <%
+            });%>
+        </ul>
+    </section>
+    <%- include('partials/footer')%>
+
+</body>
+</html>
